@@ -1,0 +1,78 @@
+import React from 'react';
+import { FadeIn } from './FadeIn';
+import { Magnet } from './Magnet';
+import { ContactButton } from './ContactButton';
+
+export const HeroSection: React.FC = () => {
+  return (
+    <section className="relative h-screen w-full flex flex-col justify-between overflow-x-clip bg-[#0C0C0C]">
+      {/* 1. Navbar */}
+      <FadeIn 
+        delay={0} 
+        y={-20} 
+        as="nav" 
+        className="flex justify-between items-center w-full px-6 md:px-10 pt-6 md:pt-8 z-20 relative"
+      >
+        <a href="#about" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
+          About
+        </a>
+        <a href="#skills" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
+          Skills
+        </a>
+        <a href="#projects" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
+          Projects
+        </a>
+        <a href="#contact" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
+          Contact
+        </a>
+      </FadeIn>
+
+      {/* 2. Hero Heading in Overflow-Hidden Container */}
+      <div className="flex-grow flex items-center justify-center w-full overflow-hidden relative select-none">
+        <FadeIn delay={0.15} y={40} className="w-full text-center">
+          <h1 className="hero-heading font-black uppercase tracking-normal leading-none whitespace-nowrap w-full text-[9vw] sm:text-[9.5vw] md:text-[10vw] lg:text-[10.5vw] mt-6 sm:mt-4 md:-mt-2">
+            Hi, i&apos;m eshaan
+          </h1>
+        </FadeIn>
+      </div>
+
+      {/* 3. Hero Portrait (Centered Absolutely) */}
+      <FadeIn
+        delay={0.6}
+        y={30}
+        className="absolute left-1/2 -translate-x-1/2 z-10 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-auto"
+      >
+        <Magnet
+          padding={150}
+          strength={3}
+          activeTransition="transform 0.3s ease-out"
+          inactiveTransition="transform 0.6s ease-in-out"
+          className="w-full h-full flex items-center justify-center"
+        >
+          <img
+            src="/portrait.png"
+            alt="Eshaan Portrait"
+            className="w-full h-auto object-contain select-none pointer-events-none"
+            loading="eager"
+          />
+        </Magnet>
+      </FadeIn>
+
+      {/* 4. Bottom Bar */}
+      <div className="flex justify-between items-end pb-7 sm:pb-8 md:pb-10 px-6 md:px-10 z-20 relative w-full">
+        <FadeIn delay={0.35} y={20}>
+          <p 
+            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px]"
+            style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
+          >
+            an ai generalist driven by crafting intelligent and high-impact systems
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={0.5} y={20}>
+          <ContactButton onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} />
+        </FadeIn>
+      </div>
+    </section>
+  );
+};
