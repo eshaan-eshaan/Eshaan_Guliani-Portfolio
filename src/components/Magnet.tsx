@@ -22,6 +22,10 @@ export const Magnet: React.FC<MagnetProps> = ({
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    // Disable magnet effect on touch devices (no mouse pointer)
+    const hasFinePointer = window.matchMedia('(pointer: fine)').matches;
+    if (!hasFinePointer) return;
+
     const handleMouseMove = (e: MouseEvent) => {
       const element = ref.current;
       if (!element) return;

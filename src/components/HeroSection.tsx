@@ -13,16 +13,16 @@ export const HeroSection: React.FC = () => {
         as="nav" 
         className="flex justify-between items-center w-full px-6 md:px-10 pt-6 md:pt-8 z-20 relative"
       >
-        <a href="#about" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
+        <a href="#about" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
           About
         </a>
-        <a href="#skills" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
+        <a href="#skills" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
           Skills
         </a>
-        <a href="#projects" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
+        <a href="#projects" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
           Projects
         </a>
-        <a href="#contact" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
+        <a href="#contact" className="text-[#D7E2EA] font-medium uppercase tracking-wider text-xs sm:text-sm md:text-lg lg:text-[1.4rem] hover:opacity-70 transition-opacity duration-200">
           Contact
         </a>
       </FadeIn>
@@ -36,40 +36,42 @@ export const HeroSection: React.FC = () => {
         </FadeIn>
       </div>
 
-      {/* 3. Hero Portrait (Centered Absolutely) */}
-      <FadeIn
-        delay={0.6}
-        y={30}
-        className="absolute left-1/2 -translate-x-1/2 z-10 w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-auto"
-      >
-        <Magnet
-          padding={150}
-          strength={3}
-          activeTransition="transform 0.3s ease-out"
-          inactiveTransition="transform 0.6s ease-in-out"
-          className="w-full h-full flex items-center justify-center"
+      {/* 3. Hero Portrait (Centered Absolutely in Wrapper to prevent Framer Motion translate conflicts) */}
+      <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[240px] sm:w-[360px] md:w-[440px] lg:w-[520px] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-none flex items-center justify-center">
+        <FadeIn
+          delay={0.6}
+          y={30}
+          className="w-full h-full pointer-events-auto"
         >
-          <img
-            src="/portrait.png"
-            alt="Eshaan Portrait"
-            className="w-full h-auto object-contain select-none pointer-events-none"
-            loading="eager"
-          />
-        </Magnet>
-      </FadeIn>
+          <Magnet
+            padding={150}
+            strength={3}
+            activeTransition="transform 0.3s ease-out"
+            inactiveTransition="transform 0.6s ease-in-out"
+            className="w-full h-full flex items-center justify-center"
+          >
+            <img
+              src="/portrait.png"
+              alt="Eshaan Portrait"
+              className="w-full h-auto object-contain select-none pointer-events-none"
+              loading="eager"
+            />
+          </Magnet>
+        </FadeIn>
+      </div>
 
       {/* 4. Bottom Bar */}
-      <div className="flex justify-between items-end pb-7 sm:pb-8 md:pb-10 px-6 md:px-10 z-20 relative w-full">
+      <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end gap-5 sm:gap-0 pb-8 sm:pb-8 md:pb-10 px-6 md:px-10 z-20 relative w-full text-center sm:text-left">
         <FadeIn delay={0.35} y={20}>
           <p 
-            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px]"
+            className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[280px] sm:max-w-[220px] md:max-w-[260px]"
             style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
           >
             an ai generalist driven by crafting intelligent and high-impact systems
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.5} y={20}>
+        <FadeIn delay={0.5} y={20} className="w-full sm:w-auto flex justify-center sm:block">
           <ContactButton onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} />
         </FadeIn>
       </div>
