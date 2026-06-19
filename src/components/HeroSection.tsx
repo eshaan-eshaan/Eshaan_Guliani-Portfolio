@@ -28,7 +28,7 @@ export const HeroSection: React.FC = () => {
       </FadeIn>
 
       {/* 2. Hero Heading in Overflow-Hidden Container */}
-      <div className="flex-grow flex items-center justify-center w-full overflow-hidden relative select-none">
+      <div className="flex-grow flex items-start sm:items-center justify-center w-full overflow-hidden relative select-none pt-16 sm:pt-0">
         <FadeIn delay={0.15} y={40} className="w-full text-center">
           <h1 className="hero-heading font-black uppercase tracking-normal leading-none whitespace-nowrap w-full text-[9vw] sm:text-[9.5vw] md:text-[10vw] lg:text-[10.5vw] mt-6 sm:mt-4 md:-mt-2">
             Hi, i&apos;m eshaan
@@ -37,7 +37,7 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* 3. Hero Portrait (Centered Absolutely in Wrapper to prevent Framer Motion translate conflicts) */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[240px] sm:w-[360px] md:w-[440px] lg:w-[520px] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-none flex items-center justify-center">
+      <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[220px] sm:w-[360px] md:w-[440px] lg:w-[520px] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-none flex items-center justify-center">
         <FadeIn
           delay={0.6}
           y={30}
