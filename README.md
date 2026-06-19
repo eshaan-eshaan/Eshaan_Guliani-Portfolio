@@ -2,7 +2,7 @@
 
 Welcome to the repository of my interactive personal portfolio. Built with a focus on visual performance, micro-interactions, and professional credibility, this website showcases my projects, skills, and product thinking.
 
-🖥️ **Live Site:** [https://eshaan-guliani-portfolio-briu.vercel.app/](https://github.com/eshaan-eshaan/Eshaan_Guliani-Portfolio) *(Or your Vercel deployment)*
+🖥️ **Live Site:** [https://eshaan-guliani-portfolio-briu.vercel.app/](https://github.com/eshaan-eshaan/Eshaan_Guliani-Portfolio) 
 
 ---
 
