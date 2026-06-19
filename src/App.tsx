@@ -5,6 +5,7 @@ import { SkillsSection } from './components/ServicesSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ContactSection } from './components/ContactSection';
 import { TechBadge } from './components/TechBadge';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
 
       {/* Floating Tech Badge */}
       <TechBadge />
+
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
