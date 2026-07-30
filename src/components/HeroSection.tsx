@@ -37,11 +37,11 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* 3. Hero Portrait (Centered Absolutely in Wrapper to prevent Framer Motion translate conflicts) */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[220px] sm:w-[360px] md:w-[440px] lg:w-[520px] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-none flex items-center justify-center">
+      <div className="absolute left-1/2 -translate-x-1/2 z-10 w-[160px] sm:w-[240px] md:w-[300px] lg:w-[360px] max-h-[42vh] top-1/2 -translate-y-1/2 sm:top-auto sm:translate-y-0 sm:bottom-0 pointer-events-none flex items-center justify-center">
         <FadeIn
           delay={0.6}
           y={30}
-          className="w-full h-full pointer-events-auto"
+          className="w-full h-full pointer-events-auto flex items-center justify-center"
         >
           <Magnet
             padding={150}
@@ -53,7 +53,7 @@ export const HeroSection: React.FC = () => {
             <img
               src="/portrait.png"
               alt="Eshaan Portrait"
-              className="w-full h-auto object-contain select-none pointer-events-none"
+              className="w-full h-auto max-h-[42vh] object-contain select-none pointer-events-none"
               loading="eager"
             />
           </Magnet>
